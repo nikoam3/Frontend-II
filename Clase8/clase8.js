@@ -149,10 +149,12 @@ function eliminarAlbum() {
       if (e.key === "f" || e.key === "F") {
         const album_eliminar = prompt("Que álbum deseas eliminar?")
         const indice = albumesFamosos.findIndex(album => album_eliminar === album.nombre) 
-        albumesFamosos.splice(indice, indice-1)
-        renderizarAlbumes(albumesFamosos);
-        mostrarDatosEnPerfil();
-        marcarFavorito();
+        if (indice !== -1) {
+          albumesFamosos.splice(indice, 1)
+          renderizarAlbumes(albumesFamosos);
+          mostrarDatosEnPerfil();
+          marcarFavorito();
+        }
         }
       })
     }
