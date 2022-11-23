@@ -163,6 +163,7 @@ formulario.addEventListener("submit", function (evento) {
 
 function navegarPaginaExito() {
   //   desarrollar la funcion aqui
+  localStorage.setItem('user', JSON.stringify(estadoUsuario)) //se agrega localStorage
   const boton = document.querySelector("button")
   boton.disabled = true
   boton.innerText = "Cargando..."
